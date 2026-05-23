@@ -1,0 +1,38 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+Debug/
+Release/
+*.user
+*.suo
+
+# Bases de datos (NO subir .accdb)
+*.accdb
+*.mdb
+*.ldb
+*.laccdb
+
+# Archivos temporales
+*.log
+*.tmp
+*.cache
+*.bak
+*.pdf 
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Configuración local
+*.local.config
+*.csproj.user
+
+# Paquetes NuGet
+packages/
+
+# Archivos compilados
+*.exe
+*.dll
+*.pdb

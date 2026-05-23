@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a mi sitio web, @Model.visitante</h1>
+    <p>Aquí podrá ver mejores ofertas en libros y revistas</p>
+</div>
+
+<!-- fecha -->
+<div class="card">
+    <h3 class="card-header">Información del sistema</h3>
+    <div class="card-body">
+        <p>La fecha y hora actual es: @Model.fecha</p>
+    </div>
+</div>
+
+<!-- visitantes card -->
+<div class="card">
+    <h3 class="card-header">Visitantes:</h3>
+    <ul>
+        @foreach (var visitante in Model.visitantes)
+        {
+            <li>@visitante</li>
+        }
+    </ul>
+</div>
+
+<!-- ejercicio practico -->
+<div class="card">
+    <h3>Estadísticas del sitio</h3>
+    <div class="card-body">
+        <p>Este sitio web fue creado el: <strong>@Model.fechaCreacion.ToString("dd/MM/yyyy")</strong></p>
+        <p>Han pasado <strong>@Model.diasTranscurridos</strong> días desde su creación.</p>
+        <p>¡Gracias por su visita!</p>
+    </div>
+</div>

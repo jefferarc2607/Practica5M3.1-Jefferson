@@ -1,0 +1,105 @@
+﻿@page
+@model C3P66Jeffer6133261.Pages.ClientesModel
+@{
+       ViewData["Title"] = "Clientes";
+       Layout = "_Layout";
+}
+
+<h1>Gestión de Clientes</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Clientes</li>
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">
+        <h3>Listado de Clientes</h3>
+    </div>
+    <div class="card-body">
+        
+            @if (Model.ListaClientes != null && Model.ListaClientes.Length > 0)        
+            {
+            <!-- con foreach --> 
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del Cliente</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Compras</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cliente in Model.ListaClientes)
+                    {
+                        <tr>
+                            <td>@cliente.Id</td>
+                            <td>@cliente.Nombre</td>
+                            <td>@cliente.Telefono</td>
+                            <td>@cliente.Email</td>
+                            <td>@cliente.TotalCompras</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                No hay clientes registrados en el sistema.
+            </div>
+        }        
+
+<br />
+<br />
+
+    
+    @if (Model.ListaClientes != null && Model.ListaClientes.Length > 0)
+    {
+    <!-- con do while -->
+    <table class="table">
+        <thead class="table-dark">
+            <tr><th>ID</th><th>Nombre</th><th>Email</th></tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 0;
+            }
+            @do
+            {
+                var cliente = Model.ListaClientes[i];
+                <tr>
+                     <td>@cliente.Id</td>
+                     <td>@cliente.Nombre</td>
+                     <td>@cliente.Telefono</td>
+                     <td>@cliente.Email</td>
+                     <td>@cliente.TotalCompras</td>
+                </tr>
+                i++;
+            } 
+            while (i < Model.ListaClientes.Length);
+        </tbody>
+    </table>
+    <br />
+        <!-- Mostrar cantidad total de clientes -->
+        <div class="alert alert-info mt-3">
+            <strong>Total de clientes: </strong> @Model.ListaClientes.Length
+        </div>
+
+}
+else
+{   
+    <div class="alert alert-warning">
+                No hay clientes registrados en el sistema.
+    </div>     
+}
+</div>
+
+
+<div class="mt-3">
+    <a asp-page="/Index" class="btn btn-secondary">Volver al Inicio</a>
+</div>

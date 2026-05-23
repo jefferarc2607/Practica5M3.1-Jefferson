@@ -1,0 +1,52 @@
+﻿@page
+@model C3P66Jeffer6133261.Pages.EmpleadoPages.IndexModel
+@{
+    ViewData["Title"] = "Empleados Contables";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Empleados del Departamento Contable</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+        <li class="breadcrumb-item active">Contables</li>
+    </ol>
+</nav>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Crear Nuevo Empleado Contable</a>
+</p>
+
+<div class="card">
+    <div class="card-header bg-success text-white">
+        <h3>Lista de Empleados Contables</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Email</th>
+                    <th>Registros Creados</th>
+                    <th>Facturas Creadas</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.EmpleadosContables)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Edad</td>
+                        <td>@item.Email</td>
+                        <td>@item.RegistrosCreados</td>
+                        <td>@item.FacturasCreadas</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+@page
+@model C3P66Jeffer6133261.Pages.EmpleadoPages.CreateModel
+
+@{
+    ViewData["Title"] = "Crear empleado contable";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Crear Nuevo Empleado Contable</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+        <li class="breadcrumb-item"><a asp-page="Index">Contables</a></li>
+        <li class="breadcrumb-item active">Crear</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="EmpleadoContable.Nombre" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Nombre" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="EmpleadoContable.Edad" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Edad" class="form-control" type="number" />
+                <span asp-validation-for="EmpleadoContable.Edad" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="EmpleadoContable.Email" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Email" class="form-control" type="email" />
+                <span asp-validation-for="EmpleadoContable.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="EmpleadoContable.RegistrosCreados" class="control-label"></label>
+                <input asp-for="EmpleadoContable.RegistrosCreados" class="form-control" type="number" />
+                <span asp-validation-for="EmpleadoContable.RegistrosCreados" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="EmpleadoContable.FacturasCreadas" class="control-label"></label>
+                <input asp-for="EmpleadoContable.FacturasCreadas" class="form-control" type="number" />
+                <span asp-validation-for="EmpleadoContable.FacturasCreadas" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
