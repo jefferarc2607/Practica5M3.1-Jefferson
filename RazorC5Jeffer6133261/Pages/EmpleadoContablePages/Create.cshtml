@@ -1,0 +1,69 @@
+@page
+@model RazorC3Jeffer6133261.Pages.EmpleadoContablePages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>EmpleadoContable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmpleadoContable.Nombre" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Nombre" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpleadoContable.Edad" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Edad" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.Edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpleadoContable.Email" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Email" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpleadoContable.Direccion" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Direccion" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpleadoContable.Telefono" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Telefono" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpleadoContable.Departamento" class="control-label"></label>
+                <input asp-for="EmpleadoContable.Departamento" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.Departamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpleadoContable.RegistrosCreados" class="control-label"></label>
+                <input asp-for="EmpleadoContable.RegistrosCreados" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.RegistrosCreados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpleadoContable.FacturasCreadas" class="control-label"></label>
+                <input asp-for="EmpleadoContable.FacturasCreadas" class="form-control" />
+                <span asp-validation-for="EmpleadoContable.FacturasCreadas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

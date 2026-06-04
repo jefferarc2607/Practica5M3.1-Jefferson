@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sistema de Gestión - Razor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+            .bg-gradient-primary {
+                background: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+            }
+
+            .sidebar {
+                min-height: 100vh;
+                width: 260px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                background: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+            }
+
+                .sidebar .nav-item {
+                    width: 100%;
+                }
+
+                .sidebar .nav-link {
+                    color: rgba(255,255,255,0.8);
+                    padding: 0.75rem 1rem;
+                    display: block;
+                    text-decoration: none;
+                    transition: all 0.3s;
+                }
+
+                    .sidebar .nav-link:hover {
+                        background-color: rgba(255,255,255,0.1);
+                        color: white;
+                    }
+
+            .sidebar-brand {
+                height: 4rem;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+            #content-wrapper {
+                margin-left: 260px;
+                padding: 1rem;
+            }
+
+            .sidebar-divider {
+                border-color: rgba(255,255,255,0.2);
+                margin: 0.5rem 0;
+            }
+    </style>
+</head>
+<body id="page-top">
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            Dashboard
+        </div>
+
+        <hr class="sidebar-divider">
+
+        <nav class="nav flex-column">
+            <a class="nav-link" asp-page="/Index">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Inicio</span>
+            </a>
+
+            <hr class="sidebar-divider">
+
+            <a class="nav-link" asp-page="/EmpleadoPages/Index">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Empleados</span>
+            </a>
+
+            <a class="nav-link" asp-page="/OficinaPages/Index">
+                <i class="fas fa-fw fa-building"></i>
+                <span>Oficinas</span>
+            </a>
+
+            <a class="nav-link" asp-page="/ClientePages/Index">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Clientes</span>
+            </a>
+
+            <hr class="sidebar-divider">
+
+            <a class="nav-link" asp-page="/EmpleadoContablePages/Index">
+                <i class="fas fa-fw fa-calculator"></i>
+                <span>Contables</span>
+            </a>
+
+            <a class="nav-link" asp-page="/EmpleadoDeveloperPages/Index">
+                <i class="fas fa-fw fa-code"></i>
+                <span>Developers</span>
+            </a>
+        </nav>
+    </div>
+
+    <div id="content-wrapper">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
