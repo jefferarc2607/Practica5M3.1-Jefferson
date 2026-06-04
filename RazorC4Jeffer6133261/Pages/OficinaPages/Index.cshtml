@@ -1,0 +1,48 @@
+@page
+@model RazorC3Jeffer6133261.Pages.OficinaPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Oficina[0].Ubicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oficina[0].CantidadMaximaEmpleados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oficina[0].AtencionClientes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Oficina) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Ubicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.CantidadMaximaEmpleados)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.AtencionClientes)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
